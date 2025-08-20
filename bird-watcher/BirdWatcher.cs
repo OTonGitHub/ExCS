@@ -1,6 +1,6 @@
 class BirdCount
 {
-    private int[] birdsPerDay;
+    private readonly int[] birdsPerDay;
 
     public BirdCount(int[] birdsPerDay)
     {
@@ -9,17 +9,17 @@ class BirdCount
 
     public static int[] LastWeek()
     {
-        return new int[] { 0, 2, 5, 3, 7, 8, 4 };
+        return [0, 2, 5, 3, 7, 8, 4];
     }
 
     public int Today()
     {
-        return birdsPerDay[birdsPerDay.Length - 1];
+        return birdsPerDay[^1];
     }
 
     public void IncrementTodaysCount()
     {
-        birdsPerDay[birdsPerDay.Length - 1]++;
+        birdsPerDay[^1]++;
     }
 
     public bool HasDayWithoutBirds()
@@ -36,6 +36,12 @@ class BirdCount
     public int CountForFirstDays(int numberOfDays)
     {
         var count = 0;
+
+        if (numberOfDays <= 0)
+            return count;
+
+        if (numberOfDays > birdsPerDay.Length)
+            numberOfDays = birdsPerDay.Length;
 
         for (var i = 0; i < numberOfDays; i++)
         {
