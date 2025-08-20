@@ -1,5 +1,3 @@
-namespace BirdWatcher;
-
 class BirdCount(int[] birdsPerDay)
 {
     private readonly int[] birdsPerDay = birdsPerDay;
