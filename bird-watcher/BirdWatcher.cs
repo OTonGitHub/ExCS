@@ -1,11 +1,8 @@
-class BirdCount
-{
-    private readonly int[] birdsPerDay;
+namespace BirdWatcher;
 
-    public BirdCount(int[] birdsPerDay)
-    {
-        this.birdsPerDay = birdsPerDay;
-    }
+class BirdCount(int[] birdsPerDay)
+{
+    private readonly int[] birdsPerDay = birdsPerDay;
 
     public static int[] LastWeek()
     {

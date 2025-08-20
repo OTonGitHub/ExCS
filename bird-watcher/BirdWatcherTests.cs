@@ -1,3 +1,5 @@
+namespace BirdWatcher;
+
 using Exercism.Tests;
 
 public class BirdWatcherTests
